@@ -31,11 +31,12 @@ app.get('/useReport', function(req, res) {
   {
     learningCount++;
     saveToLearn(req,res);
+     res.end('OK');
   }else{
-    res.send(true);
+    res.end('NOK');
   }
    
-  res.send('OK');
+ 
 });
 
 function saveToLearn(req,res){
@@ -80,7 +81,7 @@ app.get('/getConfig',function(req,res){
     var best = {cstyle:ii, extraTypes:jj, layout: kk};
     console.log('we solve: /useReport response'+JSON.stringify(best));
     
-    res.send()
+    res.json(best);
   }
 });
 
